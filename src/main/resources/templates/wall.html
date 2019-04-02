@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="/styles/myface.css" />
+        <link rel="stylesheet" type="text/css" href="/styles/wall.css" />
+        <title th:text="${model.wallOwnerUsername + '&rsquo;s wall :: My🙂Face'}"></title>
+    </head>
+
+    <body>
+        <nav>
+            <div class="nav-inner">
+                <a href="/" class="brand">My🙂Face</a>
+
+                <a href="/users" class="nav-link">Users</a>
+
+                <div class="nav-align-right">
+                    <a th:href="${'/wall/' + model.loggedInUsername}"
+                       class="nav-link"
+                       th:text="${'🙂 ' + model.loggedInUsername}"></a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="limited-width-container">
+            <h1><span th:text="${model.wallOwnerUsername}"></span>'s wall</h1>
+
+            <div th:each="post: ${model.posts}" class="post">
+                <div class="post-sender">
+                    <a th:href="${'/wall/' + post.sender}"
+                       th:text="${'🙂 ' + post.sender}"></a>
+                    says:
+                </div>
+                <div th:text="${post.content}"></div>
+            </div>
+
+
+            <h1>Write something on <span th:text="${model.wallOwnerUsername}"></span>'s wall!</h1>
+
+            <form method="post" th:action="${'/wall/' + model.wallOwnerUsername + '/post'}">
+                <input type="text" name="content" />
+                <input type="submit" value="Post!" />
+            </form>
+        </div>
+
+    </body>
+</html>
