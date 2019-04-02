@@ -8,12 +8,12 @@ label {
 }
 
 input[type=text], input[type=password] {
-    width: 250px;
-    border: 1px solid steelblue;
-    border-radius: 15px;
-    padding: 5px 10px;
-    outline: none;
-}
+     width: 250px;
+     border: 1px solid steelblue;
+     border-radius: 15px;
+     padding: 5px 10px;
+     outline: none;
+ }
 
 input[type=submit] {
     background-color: #4682b4;
@@ -23,4 +23,7 @@ input[type=submit] {
     color: white;
     border: none;
     font-size: 16px;
+}
+input[type=submit]:hover {
+    background-color: #386699;
 }
