@@ -16,9 +16,9 @@
                 <a href="/users" class="nav-link">Users</a>
 
                 <div class="nav-align-right">
-                    <a th:href="${'/wall/' + model.loggedInUsername}"
+                    <a th:href="${'/wall/' + model.loggedInUser.username}"
                        class="nav-link"
-                       th:text="${'🙂 ' + model.loggedInUsername}"></a>
+                       th:text="${'🙂 ' + model.loggedInUser.username}"></a>
                 </div>
             </div>
         </nav>
@@ -26,9 +26,9 @@
         <div class="limited-width-container">
             <h1>Say Hi to all the My🙂Face users!</h1>
 
-            <p th:each="username: ${model.allUsernames}" class="user-link">
+            <p th:each="loggedInUser: ${model.users}" class="loggedInUser-link">
                 🙂
-                <a th:text="${username}" th:href="${'/wall/' + username}"></a>
+                <a th:text="${loggedInUser.username}" th:href="${'/wall/' + loggedInUser.username}"></a>
             </p>
         </div>
 
