@@ -28,7 +28,7 @@ public class UserListController {
     public ModelAndView getAllWalls(UsernamePasswordAuthenticationToken token) {
         DashboardViewModel dashBoardView = new DashboardViewModel();
         dashBoardView.setUsers(usersService.getAllUsers());
-        dashBoardView.setLoggedInUser(((UserPrincipal)token.getPrincipal()).getUser());
+        dashBoardView.setLoggedInUser(((UserPrincipal) token.getPrincipal()).getUser());
 
         return new ModelAndView("users", "model", dashBoardView);
     }

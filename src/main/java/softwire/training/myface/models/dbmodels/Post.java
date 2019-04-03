@@ -1,10 +1,12 @@
 package softwire.training.myface.models.dbmodels;
 
+import org.jdbi.v3.core.mapper.Nested;
+
 public class Post {
 
     private int id;
-    private String sender;
-    private String recipient;
+    private User sender = new User();
+    private User recipient = new User();
     private String content;
 
 
@@ -15,24 +17,28 @@ public class Post {
         this.id = id;
     }
 
-    public String getSender() {
-        return sender;
-    }
-    public void setSender(String sender) {
-        this.sender = sender;
-    }
-
-    public String getRecipient() {
-        return recipient;
-    }
-    public void setRecipient(String recipient) {
-        this.recipient = recipient;
-    }
-
     public String getContent() {
         return content;
     }
     public void setContent(String content) {
         this.content = content;
     }
+
+    @Nested("sender")
+    public User getSender() {
+        return sender;
+    }
+    public void setSender(User sender) {
+        this.sender = sender;
+    }
+
+    @Nested("recipient")
+    public User getRecipient() {
+        return recipient;
+    }
+    public void setRecipient(User recipient) {
+        this.recipient = recipient;
+    }
+
+
 }
