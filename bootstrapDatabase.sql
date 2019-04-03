@@ -13,5 +13,5 @@ INSERT INTO `posts`
 VALUES
 ('james', 'sam', 'Hi Sam, do you like my new social network?'),
 ('james', 'sam', 'Isn\'t it great! What fun!'),
-('sam', 'james', 'Hi James, yeh it\'s great'),
+('sam', 'james', 'Hi James, yeah it\'s great'),
 ('sam', 'james', 'If only you invented it 16 years ago you\'d be a billionaire');

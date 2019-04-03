@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
-import softwire.training.myface.database.DatabaseService;
 import softwire.training.myface.models.viewmodels.WallViewModel;
+import softwire.training.myface.services.PostsService;
 
 import java.security.Principal;
 
@@ -17,8 +17,12 @@ import java.security.Principal;
 @RequestMapping("/wall")
 public class WallController {
 
+    private final PostsService postsService;
+
     @Autowired
-    DatabaseService databaseService;
+    public WallController(PostsService postsService) {
+        this.postsService = postsService;
+    }
 
     @RequestMapping(value = "/{wallOwnerUsername}", method = RequestMethod.GET)
     public ModelAndView getWall(
@@ -29,7 +33,7 @@ public class WallController {
         WallViewModel wallViewModel = new WallViewModel();
         wallViewModel.loggedInUsername = principal.getName();
         wallViewModel.wallOwnerUsername = wallOwnerUsername;
-        wallViewModel.posts = databaseService.getPostsOnWall(wallOwnerUsername);
+        wallViewModel.posts = postsService.getPostsOnWall(wallOwnerUsername);
 
         return new ModelAndView("wall", "model", wallViewModel);
     }
@@ -42,7 +46,7 @@ public class WallController {
     ) {
 
         String senderUsername = loggedInUserPrincipal.getName();
-        databaseService.createPost(senderUsername, wallOwnerUsername, content);
+        postsService.createPost(senderUsername, wallOwnerUsername, content);
 
         return new RedirectView("/wall/" + wallOwnerUsername);
     }
