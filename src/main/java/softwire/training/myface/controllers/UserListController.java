@@ -2,16 +2,12 @@ package softwire.training.myface.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import softwire.training.myface.models.dbmodels.User;
 import softwire.training.myface.models.viewmodels.DashboardViewModel;
 import softwire.training.myface.security.UserPrincipal;
 import softwire.training.myface.services.UsersService;
-
-import java.security.Principal;
 
 @Controller
 @RequestMapping(value = "/users")

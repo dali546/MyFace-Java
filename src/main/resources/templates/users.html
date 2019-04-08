@@ -2,35 +2,20 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
 
-    <head>
-        <link rel="stylesheet" type="text/css" href="/styles/myface.css" />
-        <link rel="stylesheet" type="text/css" href="/styles/users.css" />
-        <title>Users :: My🙂Face</title>
-    </head>
+<link rel="stylesheet" type="text/css" href="/styles/users.css"/>
 
-    <body>
-        <nav>
-            <div class="nav-inner">
-                <a href="/" class="brand">My🙂Face</a>
+<script src="/js/users.js"></script>
+<body>
+<div class="split-container">
+    <div class="left-column">
+    <h1>Say Hi to all the myFace users!</h1>
+    <p th:each="loggedInUser: ${model.users}" class="loggedInUser-link">
+        <a th:text="${loggedInUser.username}" th:onclick="'getUser(\'' + ${loggedInUser.username} + '\');'"></a>
+    </p>
+    </div>
+    <div class="right-column">
+    </div>
 
-                <a href="/users" class="nav-link">Users</a>
-
-                <div class="nav-align-right">
-                    <a th:href="${'/wall/' + model.loggedInUser.username}"
-                       class="nav-link"
-                       th:text="${'🙂 ' + model.loggedInUser.username}"></a>
-                </div>
-            </div>
-        </nav>
-
-        <div class="limited-width-container">
-            <h1>Say Hi to all the My🙂Face users!</h1>
-
-            <p th:each="loggedInUser: ${model.users}" class="loggedInUser-link">
-                🙂
-                <a th:text="${loggedInUser.username}" th:href="${'/wall/' + loggedInUser.username}"></a>
-            </p>
-        </div>
-
-    </body>
+</div>
+</body>
 </html>

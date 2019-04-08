@@ -1,3 +1,9 @@
+main.container{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .form-row {
     margin: 5px 0;
 }

@@ -28,11 +28,24 @@
         <version>1.5.8.RELEASE</version>
     </parent>
 
+    <!-- Settings -->
+    <properties>
+        <java.version>1.8</java.version>
+        <thymeleaf.version>3.0.8.RELEASE</thymeleaf.version>
+        <thymeleaf-layout-dialect.version>2.2.2</thymeleaf-layout-dialect.version>
+    </properties>
+
     <dependencies>
         <!-- Spring Boot Web - provides basic web framework -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.6.0</version>
         </dependency>
 
         <!-- Spring Boot Security -->

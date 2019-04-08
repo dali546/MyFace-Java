@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link rel="stylesheet" type="text/css" href="/styles/myface.css" />
-        <title>Home Page :: My🙂Face</title>
-    </head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-    <body>
-        <nav>
-            <div class="nav-inner">
-                <a href="/" class="brand">My🙂Face</a>
-            </div>
-        </nav>
+<head>
+    <title>MyFace</title>
+    <link rel="stylesheet" href="/styles/nav.css"/>
+    <link rel="stylesheet" href="/styles/general.css"/>
+    <link rel="stylesheet" href="/styles/home.css"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous"></script>
+</head>
 
-        <div class="limited-width-container">
-            <h1>Welcome to My🙂Face</h1>
-            <a href="/users" class="button">
-                Login
-            </a>
-            <a href="/signup" class="button">
-                Sign Up
-            </a>
-        </div>
-    </body>
+<body>
+<!-- Import NavBar Fragment -->
+<div class="nav-container" th:replace="fragments/navbar :: navbar"></div>
+<main class="container">
+
+    <div class="logocon" data-0="opacity: 1; display: flex" data-99="opacity: 0; display: none"
+         data-100="display: none">
+        <div class="logo">my Face</div>
+        <div class="hint" data-0="bottom: 10vh" data-100="bottom: -25px">Use Navigation above to access site</div>
+    </div>
+
+</main>
+<footer>All Rights Reserved. Dali 2019 Copyright.</footer>
+</body>
+<script src="/js/nav.js"></script>
 </html>

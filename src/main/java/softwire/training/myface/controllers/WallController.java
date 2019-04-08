@@ -15,8 +15,6 @@ import softwire.training.myface.security.UserPrincipal;
 import softwire.training.myface.services.PostsService;
 import softwire.training.myface.services.UsersService;
 
-import java.security.Principal;
-
 @Controller
 @RequestMapping("/wall")
 public class WallController {

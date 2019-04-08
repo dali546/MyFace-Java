@@ -11,7 +11,7 @@ public abstract class DatabaseService {
         String databaseName = "myface";
         String port = "3306";
         String username = "root";
-        String password = "password";
+        String password = "root";
 
         String connectionString = "jdbc:mysql://" + hostname +
                 ":" + port +

@@ -4,8 +4,8 @@ CREATE TABLE `users` (
     `id` int NOT NULL AUTO_INCREMENT,
     `username` VARCHAR(255) NOT NULL UNIQUE,
     `password` VARCHAR(255) NOT NULL,
-    `first-name` VARCHAR(255) NOT NULL,
-    `last-name` VARCHAR(255) NOT NULL,
+    `first_name` VARCHAR(255) NOT NULL,
+    `last_name` VARCHAR(255) NOT NULL,
     PRIMARY KEY (`id`)
 );
 
@@ -22,7 +22,7 @@ CREATE TABLE `posts` (
 );
 
 INSERT INTO `users`
-(`username`, `password`, `first-name`,`last-name`)
+(`username`, `password`, `first_name`,`last_name`)
 VALUES
 ('dali546', 'fishbrain', 'Muhammed', 'Ali'),
 ('feadoor', 'peabrain', 'Sam', 'L Jackson'),

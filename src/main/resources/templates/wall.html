@@ -2,27 +2,9 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
 
-    <head>
-        <link rel="stylesheet" type="text/css" href="/styles/myface.css" />
         <link rel="stylesheet" type="text/css" href="/styles/wall.css" />
-        <title th:text="${model.wallUser.username + '&rsquo;s wall :: My🙂Face'}"></title>
-    </head>
 
     <body>
-        <nav>
-            <div class="nav-inner">
-                <a href="/" class="brand">My🙂Face</a>
-
-                <a href="/users" class="nav-link">Users</a>
-
-                <div class="nav-align-right">
-                    <a th:href="${'/wall/' + model.loggedInUser.username}"
-                       class="nav-link"
-                       th:text="${'🙂 ' + model.loggedInUser.username}"></a>
-                </div>
-            </div>
-        </nav>
-
         <div class="limited-width-container">
             <h1><span th:text="${model.wallUser.username}"></span>'s wall</h1>
 

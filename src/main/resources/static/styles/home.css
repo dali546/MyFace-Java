@@ -1,0 +1,21 @@
+.logocon {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 3;
+}
+
+
+.logo {
+	font: 300 150px Comfortaa;
+	color: #fff;
+}
+
+.hint {
+	z-index: 4;
+	width: 100vw;
+	text-align: center;
+	color: rgba(255,255,255,0.6);
+	font: 300 30px Comfortaa;
+}
